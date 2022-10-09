@@ -12,14 +12,6 @@ mongoose.connect(process.env.DB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
-
-app.use(cors({ credentials: true }, { origin: true }));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ limit: '5000mb', extended: true, parameterLimit: 100000000000 }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, './public')));
-app.use('/', require('./routes/cards.route'))
-
 // ---- REDIRECT TO HTTPS ---- //
 if (_environment === 'production') {
     app.enable('trust proxy');
@@ -29,10 +21,19 @@ if (_environment === 'production') {
             next();
         } else {
             // this is an http request, redirect to https
-            res.redirect(301, 'https://' + req.headers.host + req.url);   
+            res.redirect(301, 'https://' + req.headers.host + "spacejunkie.space");   
         }
     });
 }
+
+app.use(cors({ credentials: true }, { origin: true }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ limit: '5000mb', extended: true, parameterLimit: 100000000000 }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, './public')));
+app.use('/', require('./routes/cards.route'))
+
+
 app.listen(PORT, () => {
     console.log(`Listening to Port: ${PORT}`)
 })
