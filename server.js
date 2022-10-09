@@ -21,7 +21,7 @@ if (_environment === 'production') {
             next();
         } else {
             // this is an http request, redirect to https
-            res.redirect(301, 'https://' + req.headers.host + "spacejunkie.space");   
+            res.redirect(301, 'https://' + req.headers.host);   
         }
     });
 }
