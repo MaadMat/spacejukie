@@ -28,7 +28,7 @@ if (_environment === 'production') {
         }
     });
 }
-app.use(compression({ filter: shouldCompress }))
+app.use(compression())
 app.use(cors({ credentials: true }, { origin: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ limit: '5000mb', extended: true, parameterLimit: 100000000000 }));
