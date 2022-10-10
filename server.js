@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
+const comression = require("compression")
 const app = express();
 const cors = require('cors')
 const path = require("path");
@@ -12,6 +13,8 @@ mongoose.connect(process.env.DB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
+
+
 // ---- REDIRECT TO HTTPS ---- //
 if (_environment === 'production') {
     app.enable('trust proxy');
@@ -25,7 +28,7 @@ if (_environment === 'production') {
         }
     });
 }
-
+app.use(compression({ filter: shouldCompress }))
 app.use(cors({ credentials: true }, { origin: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ limit: '5000mb', extended: true, parameterLimit: 100000000000 }));
