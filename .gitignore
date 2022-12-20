@@ -1,5 +1,6 @@
-    .node_modules
-    .env
-    .jest.config.js
-    .middleware
-    .public/data.js
+node_modules
+.env
+jest.config.js
+middleware
+public/data.js
+**/node_modules
