@@ -1,3 +1,165 @@
+html, body{
+    font-size: 16px;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height:100vh ;
+    max-width: 100%;
+    background-color: #fffbfe;
+}
+
+#nav-bar{
+display: flex;
+width: 90%;
+height: 3.4375rem;
+margin: 0.625rem;
+margin-bottom: 0;
+justify-content: space-between;
+align-items: center;
+}
+#logo{
+    height: 2.5rem;
+    width: 2.5rem;
+}
+#links{
+    display:none;
+}
+
+.open{
+    all: unset;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 85vw;
+    height: 100vh;
+    background-color: #ffffff;
+    margin: 0px 0 0 68px;
+    z-index: 1;
+}
+
+.open > li{
+    all: unset;
+    margin: 1.25rem 0 0 0;
+}
+ #Hamburger{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 1.5rem;
+    width: 2.5rem;
+    margin: 0px -22px 1px 0px;
+ }
+
+ .ham{
+    background-color: rgb(0, 0, 0);
+    width: 2rem; 
+    height: 0.15625rem;
+ }
+
+
+ #main{
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    margin: 1.25rem;
+    margin-bottom: 0;
+    width: 90%;
+    height: 90vh;
+}
+
+ #game-title{
+    align-self: flex-start;
+    font-size:1.825rem;
+    font-weight: 500;
+    margin: 0 0 0 1.25rem;
+    padding: 0;
+ }
+
+
+#cardView{
+    display: grid; 
+    justify-content: center;
+    grid-template-columns: 1fr 1fr ; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". . "
+      ". . "
+      ". .";
+    height:39rem;
+    width: 17.5rem;
+    padding: 2px;
+}
+
+#cardView > p {
+    position: relative;
+margin: auto;
+top: 13.125rem;
+left:5rem;
+width: 50vw;
+}
+.card{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    border:1.5px solid black;
+}
+.card > h2{
+    font-size: 1.125rem;
+    margin: 5px 0 0px 5px;
+    color: #000000;
+    
+}
+
+.card> ul{
+    all: unset;
+    margin: 1.25rem 0 0 0;
+    
+}
+.card > ul > li{
+    all: unset;
+    font-size: 0.925rem;
+    justify-self: center;
+    margin: 8px 0px 0px 10px;
+    display: flex;
+    color:#b10000;
+}
+
+#btns{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+   width: 100%;
+   margin-top: 1.825rem;
+   margin-bottom: 1.625rem;
+   border-radius: 8px;
+}
+
+#btn-1, #btn-2{
+    background-color: #000000;
+    border: 0;
+    color: #ffffff;
+    border-radius: 10px;
+    height: 3rem;
+    width: 7.5rem;
+}
+
+.open1{
+    transform:translate(0px, 10px) rotate(45deg);
+}
+
+.disappear{
+    opacity: 0;
+}
+.open2{
+    transform:translate(0, -7px) rotate(-45deg);
+}
+
 
 
 
@@ -5,7 +167,7 @@
 
 
 /* Small screens with a low pixel density */
-@media (max-width: 767px) and (max-resolution: 96dpi) {
+@media screen and (max-width: 480px) {
     body {
       font-size: 16px;
       font-family: sans-serif;
@@ -170,7 +332,7 @@
   }
   
   /* Medium screens with a medium pixel density */
-  @media (min-width: 768px) and (max-width: 1199px) and (min-resolution: 144dpi) and (max-resolution: 192dpi) {
+  @media screen and (min-width: 481px) and (max-width: 768px) {
     body {
       font-size: 18px;
       font-family: sans-serif;
@@ -335,7 +497,7 @@
   }
   
   /* Large screens with a high pixel density */
-  @media (min-width: 1200px) and (min-resolution: 192dpi) {
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
     body {
       font-size: 20px;
       font-family: sans-serif;
