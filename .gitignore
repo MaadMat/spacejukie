@@ -4,3 +4,4 @@ jest.config.js
 middleware
 public/data.js
 **/node_modules
+package-lock.json
